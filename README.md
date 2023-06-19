@@ -59,4 +59,4 @@ The following animation demonstrates the application functionality:
 
 ## URL of application
 
-https://sakshiarora04.github.io/Quiz/
+[https://sakshiarora04.github.io/quiz/](https://sakshiarora04.github.io/quiz/)
