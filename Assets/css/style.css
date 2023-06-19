@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial;  
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+ 
+}
+header  ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+/* viewscore in left side of header */
+.viewScore{
+   text-align: left;
+  list-style: none;
+}
+/* showcount timer in right side of header */
+.showCount{
+  text-align: right;
+  margin-right: 100px;
+  list-style: none;
+}
+.timeleft{
+  text-align: center;
+  font-weight: bold;
+}
+.start-button {
+  background-color: #0c3151;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;  
+  max-width: 255px; 
+  text-align: center;  
+  margin-top: 0.6em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.wrapper{
+  flex: 0 auto;
+  background-color: white;
+  border-radius: 8px; 
+  margin-top: 50px;
+  
+}
+.size {
+  width: 55vw;
+  height: 400px;
+}
+.quiz {
+
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+.scorelist {
+  padding: 20px;
+  
+}
+/* answer option button class */
+.btn{
+  font-weight: bolder;
+  display:block;
+  padding:5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #0c3151;
+  color: white;
+  width:auto;
+}
+.btn:hover{
+  background-color:rgb(143, 91, 120);
+  
+}
+.goback-btn, .clear-btn{
+  display: inline;  
+  font-weight: bolder;
+  
+  padding:5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #0c3151;
+  color: white;
+  
+}
+
+.result {
+  width: 30vw;
+  height: 200px;
+  font-style: italic;
+  /* margin: 10px; */
+}
+li{
+  list-style: 'none';
+  display: block;
+}
+#init{
+  margin: auto;
+  align-items: left;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 1183px) {
+  main {
+    flex-direction: column;
+  }
+
+  .size,
+  .result {
+    width: 90vw;
+    
+  }
+
+  .wrapper {
+    background-color: white;
+    margin: 20px auto;
+    width: 92vw;
+  }
+}
+
+ @media screen and (max-width: 504px) {
+    .goback-btn, .clear-btn {
+    font-size: 12px;
+    width: 20ox;
+    
+  }
+
+  .timeleft {
+    height: 200px;
+  }
+ 
+} 

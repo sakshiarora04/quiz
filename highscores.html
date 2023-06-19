@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Box Styling</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <section class="wrapper">
+        <div class="scorelist size">
+          <h1 style="font-size: 35px"><strong>Highscores</strong></h1>
+          <ul id="init">
+            <li></li>
+            <li></li>
+          </ul>
+          <button class="goback-btn">
+            <strong>Go Back</strong>
+          </button>
+          <button class="clear-btn">
+            <strong>Clear high score</strong>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script>
+      //get stored values from local storage
+      var initName = JSON.parse(localStorage.getItem("initial-name"));
+      var ulElement = document.getElementById("init");
+      //sort highest to lowest score
+      initName.sort(function compare(a, b) {
+        return b.finScore - a.finScore;
+      });
+      for (var i = 0; i < initName.length; i++) {
+        var liElement = document.createElement("li");
+        liElement.setAttribute(
+          "style",
+          "text-align:left; background-color: rgb(231, 213, 213); padding:5px 20px; margin:10px 0; height:25px; width:50%"
+        );
+        liElement.textContent =
+          i + 1 + ". " + initName[i].name + "- " + initName[i].finScore;
+        ulElement.appendChild(liElement);
+      }
+
+      var gobackbtn = document.querySelector(".goback-btn");
+      var clearbtn = document.querySelector(".clear-btn");
+
+      gobackbtn.addEventListener("click", () => {
+      window.location.href = "index.html";
+      });
+      clearbtn.addEventListener("click", () => {
+        ulElement.textContent = "";
+        initName = [];
+        localStorage.setItem("initial-name", JSON.stringify(initName));
+      });
+    </script>
+  </body>
+</html>
